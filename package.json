@@ -5,8 +5,7 @@
   "scripts": {
     "start": "node dist/app.js",
     "dev": "cross-env NODE_ENV=development nodemon",
-    "build": "tsc -p tsconfig.json",
-    "vercel-build": "npm run build",  
+    "build": "tsc -p tsconfig.json",  
     "build:watch": "tsc -w -p tsconfig.json",
     "debug": "cross-env NODE_ENV=development nodemon --inspect src/app.ts",
     "lint": "eslint . --ext .ts",

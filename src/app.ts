@@ -42,7 +42,7 @@ app.use(errorHandler);
 
 const port = config.PORT;
 
-app.listen(port, () => {
+app.listen(process.env.PORT||4000, () => {
   console.log(`Server is running in ${config.NODE_ENV} mode on port ${port}`);
 });
 
