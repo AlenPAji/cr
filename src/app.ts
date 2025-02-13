@@ -4,10 +4,15 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import createError from 'http-errors';
 import config from './config/env.config';
+import dotenv from 'dotenv';
 
 import indexRouter from './routes/index';
 import departmentRouter from './routes/department'
 var db=require('./database/connection')
+
+dotenv.config({ 
+  path: path.resolve(__dirname, '/config/.env.development')
+});
     
     
 const app: Express = express();
@@ -41,7 +46,7 @@ app.use(function(req: Request, res: Response, next: NextFunction) {
 app.use(errorHandler);
 
 const port = config.PORT;
-
+console.log(process.env.PORT)
 app.listen(process.env.PORT||4000, () => {
   console.log(`Server is running in ${config.NODE_ENV} mode on port ${port}`);
 });
